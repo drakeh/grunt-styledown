@@ -27,5 +27,8 @@
   },
   "scripts": {
     "test": "grunt test"
+  },
+  "dependencies": {
+    "styledown": "^1.0.1"
   }
 }
