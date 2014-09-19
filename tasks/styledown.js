@@ -8,23 +8,22 @@
 
 'use strict';
 
-module.exports = function (grunt) {
+var Styledown = require('styledown');
+var chalk = require('chalk');
 
-    // Please see the Grunt documentation for more information regarding task
-    // creation: http://gruntjs.com/creating-tasks
+module.exports = function (grunt) {
 
     grunt.registerMultiTask('styledown', 'Grunt plugin to generate style guides via styledown', function () {
 
-        // Merge task-specific and/or target-specific options with these defaults.
-        var options = this.options({
-            punctuation: '.',
-            separator: ', '
-        });
+        var options = this.options();
 
         // Iterate over all specified file groups.
         this.files.forEach(function (file) {
-            // Concat specified files.
-            var src = file.src.filter(function (filepath) {
+            var src, html;
+
+            // Build file source array suitable for passing to Styledown.
+            // Each item expected to have 'name' and 'data' keys.
+            src = file.src.filter(function (filepath) {
                 // Warn on and remove invalid source files (if nonull was set).
                 if (!grunt.file.exists(filepath)) {
                     grunt.log.warn('Source file "' + filepath + '" not found.');
@@ -33,19 +32,21 @@ module.exports = function (grunt) {
                     return true;
                 }
             }).map(function (filepath) {
-                // Read file source.
-                return grunt.file.read(filepath);
-            }).join(grunt.util.normalizelf(options.separator));
+                return { name: filepath, data: grunt.file.read(filepath) };
+            });
 
-            // Handle options.
-            src += options.punctuation;
+            // Let Styledown do its thing
+            try {
+                html = Styledown.parse(src, options);
+            } catch (err) {
+                grunt.fail.warn(err);
+            }
 
             // Write the destination file.
-            grunt.file.write(file.dest, src);
+            grunt.file.write(file.dest, html);
 
             // Print a success message.
-            grunt.log.writeln('File "' + file.dest + '" created.');
+            grunt.log.writeln('File ' + chalk.cyan(file.dest) + ' created.');
         });
     });
-
 };

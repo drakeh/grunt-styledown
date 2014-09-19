@@ -33,22 +33,11 @@ module.exports = function (grunt) {
 
         // Configuration to be run (and then tested).
         styledown: {
-            default_options: {
-                options: {
-                },
+            single_markdown_file: {
                 files: {
-                    'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
+                    'tmp/single_markdown_file': ['test/fixtures/markdown_1.md']
                 }
             },
-            custom_options: {
-                options: {
-                    separator: ': ',
-                    punctuation: ' !!!'
-                },
-                files: {
-                    'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
-                }
-            }
         },
 
         // Unit tests.

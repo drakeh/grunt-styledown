@@ -29,6 +29,7 @@
     "test": "grunt test"
   },
   "dependencies": {
+    "chalk": "^0.5.1",
     "styledown": "^1.0.1"
   }
 }
