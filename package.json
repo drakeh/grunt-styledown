@@ -1,0 +1,31 @@
+{
+  "name": "grunt-styledown",
+  "version": "0.0.1",
+  "description": "Grunt plugin to generate style guides via styledown",
+  "homepage": "https://github.com/drakeh/grunt-styledown",
+  "repository": "https://github.com/drakeh/grunt-styledown",
+  "author": {
+    "name": "Drake Hampton",
+    "email": "drakehamp@gmail.com",
+    "url": ""
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-nodeunit": "~0.3.0",
+    "grunt": "~0.4.2",
+    "jshint-stylish": "~0.1.5",
+    "load-grunt-tasks": "~0.3.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  }
+}
