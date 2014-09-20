@@ -35,7 +35,12 @@ module.exports = function (grunt) {
         styledown: {
             single_markdown_file: {
                 files: {
-                    'tmp/single_markdown_file': ['test/fixtures/markdown_1.md']
+                    'tmp/single_markdown_file': ['test/fixtures/simple.md']
+                }
+            },
+            single_css_file: {
+                files: {
+                    'tmp/single_css_file': ['test/fixtures/simple.css']
                 }
             },
         },

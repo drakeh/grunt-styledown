@@ -35,8 +35,17 @@ exports.styledown = {
         test.expect(1);
 
         var actual = read('tmp/single_markdown_file').trim();
-        var expected = read('test/expected/styleguide_markdown_1.html').trim();
-        test.equal(actual, expected, 'should create styleguide from markdown file');
+        var expected = read('test/expected/simple.html').trim();
+        test.equal(actual, expected, 'should create styleguide from Markdown file');
+
+        test.done();
+    },
+    single_css_file: function (test) {
+        test.expect(1);
+
+        var actual = read('tmp/single_css_file').trim();
+        var expected = read('test/expected/simple.html').trim();
+        test.equal(actual, expected, 'should create styleguide from CSS file');
 
         test.done();
     }
