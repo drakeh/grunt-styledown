@@ -33,16 +33,37 @@ module.exports = function (grunt) {
 
         // Configuration to be run (and then tested).
         styledown: {
-            single_markdown_file: {
+            simple_markdown: {
                 files: {
-                    'tmp/single_markdown_file': ['test/fixtures/simple.md']
+                    'tmp/simple_markdown.html': ['test/fixtures/simple.md']
+                },
+                options: {
+                    sg_css: null,
+                    sg_js: null
                 }
             },
-            single_css_file: {
+            simple_css: {
                 files: {
-                    'tmp/single_css_file': ['test/fixtures/simple.css']
+                    'tmp/simple_css.html': ['test/fixtures/simple.css']
+                },
+                options: {
+                    sg_css: null,
+                    sg_js: null
                 }
             },
+            standard: {
+                files: {
+                    'tmp/standard.html': ['test/fixtures/simple.md']
+                }
+            },
+            custom_title: {
+                files: {
+                    'tmp/custom_title.html': ['test/fixtures/simple.md']
+                },
+                options: {
+                    title: 'Custom Title'
+                }
+            }
         },
 
         // Unit tests.

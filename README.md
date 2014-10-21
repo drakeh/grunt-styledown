@@ -25,18 +25,49 @@ In your project's Gruntfile, add a section named `styledown` to the data object 
 ```js
 grunt.initConfig({
   styledown: {
-    options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
+    build: {
+      files: 'dist/styleguide/index.html': ['src/styleguide/*.md'],
+      options: {
+        css: 'dist/css/my-styles.css'
+        js: 'dist/js/my-scripts.js'
+        title: 'My Style Guide'
+      }
     },
   },
 })
 ```
 
 ### Options
-Coming soon.
+
+#### css
+Type: `String` or `Array`  
+Default: none
+
+One or multiple CSS file paths to reference from the styleguide. `<link>` tags will be included in the style guide `<head>` for each path.
+
+#### js
+Type: `String` or `Array`  
+Default: none
+
+One or multiple JavaScript file paths to reference from the styleguide. `<script>` tags will be included at the bottom of the style guide `<body>` for each path.
+
+#### title
+Type: `String`  
+Default: Styledown
+
+A title to use in the style guide's `<title>` tag.
+
+#### sg_css
+Type: `String` or `Array`  
+Default: https://cdn.rawgit.com/styledown/styledown/v1.0.1/data/styledown.css
+
+One or multiple supporting CSS file paths to reference from the styleguide. By default, this will be the supporting CSS file packaged with the latest version of Styledown. Set to `null` to remove.
+
+#### sg_js
+Type: `String` or `Array`  
+Default: https://cdn.rawgit.com/styledown/styledown/v1.0.1/data/styledown.js
+
+One or multiple supporting JavaScript file paths to reference from the styleguide. By default, this will be the supporting JavaScript file packaged with the latest version of Styledown. Set to `null` to remove.
 
 ### Usage Examples
 Coming soon.
