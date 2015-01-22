@@ -59,14 +59,13 @@ module.exports = function (grunt) {
             options.template = options.template.replace(/<title>.*<\/title>/i,
                 '<title>' + options.title + '</title>');
         }
-
         // Iterate over all specified file groups.
         this.files.forEach(function (file) {
-            var src, html;
+            var src, srcFiles, html;
 
             // Build file source array suitable for passing to Styledown.
             // Each item expected to have 'name' and 'data' keys.
-            src = file.src.filter(function (filepath) {
+            srcFiles = file.src.filter(function (filepath) {
                 // Warn on and remove invalid source files (if nonull was set).
                 if (!grunt.file.exists(filepath)) {
                     grunt.log.warn('Source file "' + filepath + '" not found.');
@@ -74,9 +73,13 @@ module.exports = function (grunt) {
                 } else {
                     return true;
                 }
-            }).map(function (filepath) {
-                return { name: filepath, data: grunt.file.read(filepath) };
             });
+            if (options.config){
+                srcFiles.push(options.config);
+            }
+            src = srcFiles.map(function (filepath) {
+              return { name: filepath, data: grunt.file.read(filepath) };
+            });            
 
             // Let Styledown do its thing.
             try {
