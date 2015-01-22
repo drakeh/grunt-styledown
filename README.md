@@ -30,7 +30,8 @@ grunt.initConfig({
       options: {
         css: 'dist/css/my-styles.css'
         js: 'dist/js/my-scripts.js'
-        title: 'My Style Guide'
+        title: 'My Style Guide',
+        config: 'dist/config.md'
       }
     },
   },
@@ -68,6 +69,12 @@ Type: `String` or `Array`
 Default: https://cdn.rawgit.com/styledown/styledown/v1.0.1/data/styledown.js
 
 One or multiple supporting JavaScript file paths to reference from the styleguide. By default, this will be the supporting JavaScript file packaged with the latest version of Styledown. Set to `null` to remove.
+
+#### config
+Type: `String`
+Default : undefined
+
+A Styledown's `config.md`. You can generate this `styledown --conf > config.md`.
 
 ### Usage Examples
 Coming soon.
