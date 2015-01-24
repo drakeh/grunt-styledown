@@ -55,6 +55,14 @@ module.exports = function (grunt) {
                 options: {
                     title: 'Custom Title'
                 }
+            },
+            config: {
+                files: {
+                    'tmp/config_md.html': ['test/fixtures/simple.md']
+                },
+                options: {
+                    config: 'test/fixtures/config.md'
+                }
             }
         },
 

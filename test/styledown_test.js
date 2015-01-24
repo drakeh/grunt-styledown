@@ -84,5 +84,15 @@ exports.styledown = {
             'should allow setting a custom page title');
 
         test.done();
-    }
+    },
+    
+    with_config_option: function (test) {
+        test.expect(1);
+        
+        var actual = read('tmp/config_md.html').trim();
+        var expected = read('test/expected/config_md.html').trim();
+        test.equal(actual, expected, 'should create styleguide with config.md');
+        
+        test.done();
+    }    
 };

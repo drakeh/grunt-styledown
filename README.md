@@ -69,6 +69,14 @@ Default: https://cdn.rawgit.com/styledown/styledown/v1.0.1/data/styledown.js
 
 One or multiple supporting JavaScript file paths to reference from the styleguide. By default, this will be the supporting JavaScript file packaged with the latest version of Styledown. Set to `null` to remove.
 
+#### config
+Type: `String`  
+Default : none
+
+A Styledown [Markdown configuration file](https://github.com/styledown/styledown/blob/master/docs/Configuration.md).
+
+_Warning:_ Setting the styleguide's `<head>` content via this file will overwrite the `css`, `sg_css`, and `title` options described above. Similarly, any `<body>` content set via this file will overwrite the `js` and `sg_js` options.
+ 
 ### Usage Examples
 Coming soon.
 
