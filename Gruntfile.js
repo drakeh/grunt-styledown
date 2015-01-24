@@ -69,7 +69,7 @@ module.exports = function (grunt) {
                     'tmp/config_md.html': ['test/fixtures/simple.md']
                 },
                 options: {
-                    config: "test/fixtures/config.md"
+                    config: 'test/fixtures/config.md'
                 }
             }
         },
