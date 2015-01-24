@@ -2,7 +2,7 @@
  * grunt-styledown
  * https://github.com/drakeh/grunt-styledown
  *
- * Copyright (c) 2014 Drake Hampton
+ * Copyright (c) 2015 Drake Hampton
  * Licensed under the MIT license.
  */
 
