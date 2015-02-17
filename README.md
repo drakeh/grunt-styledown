@@ -1,6 +1,6 @@
 # grunt-styledown
 
-> Grunt plugin to generate style guides via styledown
+> Grunt plugin to generate style guides via Styledown
 
 ## Getting Started
 This plugin requires Grunt.
