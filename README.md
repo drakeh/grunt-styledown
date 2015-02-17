@@ -26,7 +26,9 @@ In your project's Gruntfile, add a section named `styledown` to the data object 
 grunt.initConfig({
   styledown: {
     build: {
-      files: 'dist/styleguide/index.html': ['src/styleguide/*.md'],
+      files: {
+        'dist/styleguide/index.html': ['src/styleguide/*.md']
+      },
       options: {
         css: 'dist/css/my-styles.css'
         js: 'dist/js/my-scripts.js'
