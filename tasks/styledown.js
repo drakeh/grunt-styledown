@@ -43,17 +43,33 @@ var buildJsRefs = function(src) {
     });
 };
 
+var buildMarkup = function(src) {
+    var tmp = [],
+        i = 0,
+        x = null;
+
+    for (i, x; x = src[i]; ++i) {
+        tmp += x;
+    }
+
+    return tmp;
+};
+
 module.exports = function (grunt) {
 
     grunt.registerMultiTask('styledown', 'Grunt plugin to generate style guides via styledown', function () {
 
-        var options = this.options(defaultOptions);
+        var options = this.options(defaultOptions),
+            optionsHeadSgCss = buildCssRefs(options.sg_css),
+            optionsHeadCss = buildCssRefs(options.css),
+            optionsBodySgJs = buildJsRefs(options.sg_js),
+            optionsBodyJs = buildJsRefs(options.js);
 
-        options.head += buildCssRefs(options.sg_css);
-        options.head += buildCssRefs(options.css);
+        options.head += buildMarkup(optionsHeadSgCss);
+        options.head += buildMarkup(optionsHeadCss);
 
-        options.body += buildJsRefs(options.sg_js);
-        options.body += buildJsRefs(options.js);
+        options.body += buildMarkup(optionsBodySgJs);
+        options.body += buildMarkup(optionsBodyJs);
 
         if (options.title) {
             options.template = options.template.replace(/<title>.*<\/title>/i,
