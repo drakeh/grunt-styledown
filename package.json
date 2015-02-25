@@ -1,6 +1,6 @@
 {
   "name": "grunt-styledown",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Grunt plugin to generate style guides via styledown",
   "homepage": "https://github.com/drakeh/grunt-styledown",
   "repository": "https://github.com/drakeh/grunt-styledown",
