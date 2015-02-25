@@ -28,7 +28,7 @@ var buildResourceRefs = function(src, formatter) {
         items = src;
     }
 
-    return items.map(formatter);
+    return items.map(formatter).join('');
 };
 
 var buildCssRefs = function(src) {
