@@ -30,8 +30,8 @@ grunt.initConfig({
         'dist/styleguide/index.html': ['src/styleguide/*.md']
       },
       options: {
-        css: 'dist/css/my-styles.css'
-        js: 'dist/js/my-scripts.js'
+        css: 'dist/css/my-styles.css',
+        js: 'dist/js/my-scripts.js',
         title: 'My Style Guide'
       }
     },
